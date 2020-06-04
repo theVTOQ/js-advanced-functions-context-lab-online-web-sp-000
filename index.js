@@ -1,4 +1,44 @@
 /* Your Code Here */
+function createEmployeeRecord(employee){
+  return {
+    firstName: employee[0],
+    familyName: employee[1],
+    title: employee[2],
+    payPerHour: employee[3],
+    timeInEvents: [],
+    timeOutEvents: []
+  }
+}
+
+function createEmployeeRecords(employees){
+  return employees.map(employee => createEmployeeRecord(employee));
+}
+
+function createTimeInEvent(time){
+  const splitTime = time.split(' ');
+  const date = time[0];
+  const hour = time[1];
+  this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
+}
+
+function createTimeOutEvent(time){
+  const splitTime = time.split(' ');
+  const date = time[0];
+  const hour = time[1];
+  this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
+}
+
+function hoursWorkedOnDate(date){
+  const timeIn = this.timeInEvents.find(event => event.date = date);
+  const startingHour = parseInt(timeIn.hour);
+  const timeOut = this.timeOutEvents.find(event => event.date = date);
+  const endingHour = parseInt(timeOut.hour);
+  return endingHour - startingHour;
+}
+
+function wagesEarnedOnDate(date){
+  return this.payPerHour * hoursWorkedOnDate(date);
+}
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
@@ -19,4 +59,16 @@ let allWagesFor = function () {
     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
     return payable
+}
+
+function payrollExpense(){
+  return this.reduce((total, employee) => total + employee.allWagesFor());
+}
+
+function findEmployeeByFirstName(employees, firstName){
+  return employees.find(employee => employee.firstName === firstName);
+}
+
+function calculatePayroll(employeeRecords){
+  return this.reduce((total, employee) => total + employee.allWagesFor());
 }
