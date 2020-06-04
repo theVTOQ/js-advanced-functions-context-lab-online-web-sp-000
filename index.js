@@ -17,7 +17,7 @@ function createEmployeeRecords(employees){
 function createTimeInEvent(time){
   const splitTime = time.split(' ');
   const date = splitTime[0];
-  const hour = splitTime[1];
+  const hour = parseInt(splitTime[1]);
   this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
   return this;
 }
