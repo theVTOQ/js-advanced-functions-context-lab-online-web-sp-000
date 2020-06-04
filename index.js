@@ -31,9 +31,9 @@ function createTimeOutEvent(time){
 }
 
 function hoursWorkedOnDate(date){
-  const timeIn = this.timeInEvents.find(event => event.date = date);
+  const timeIn = this.timeInEvents.find(event => event.date == date);
   const startingHour = parseInt(timeIn.hour);
-  const timeOut = this.timeOutEvents.find(event => event.date = date);
+  const timeOut = this.timeOutEvents.find(event => event.date == date);
   const endingHour = parseInt(timeOut.hour);
   return (endingHour - startingHour)/100;
 }
