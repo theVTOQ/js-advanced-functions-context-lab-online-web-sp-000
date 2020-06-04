@@ -18,14 +18,14 @@ function createTimeInEvent(time){
   const splitTime = time.split(' ');
   const date = time[0];
   const hour = time[1];
-  this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
+  return this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
 }
 
 function createTimeOutEvent(time){
   const splitTime = time.split(' ');
   const date = time[0];
   const hour = time[1];
-  this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
+  return this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
 }
 
 function hoursWorkedOnDate(date){
