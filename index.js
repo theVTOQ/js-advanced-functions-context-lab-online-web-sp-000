@@ -25,8 +25,9 @@ function createTimeInEvent(time){
 function createTimeOutEvent(time){
   const splitTime = time.split(' ');
   const date = splitTime[0];
-  const hour = splitTime[1];
-  return this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
+  const hour = parseInt(splitTime[1]);
+  this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
+  return this;
 }
 
 function hoursWorkedOnDate(date){
