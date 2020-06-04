@@ -23,8 +23,8 @@ function createTimeInEvent(time){
 
 function createTimeOutEvent(time){
   const splitTime = time.split(' ');
-  const date = time[0];
-  const hour = time[1];
+  const date = splitTime[0];
+  const hour = splitTime[1];
   return this.timeOutEvents.push({type: "TimeOut", date: date, hour: hour});
 }
 
@@ -72,3 +72,4 @@ function findEmployeeByFirstName(employees, firstName){
 function calculatePayroll(employeeRecords){
   return this.reduce((total, employee) => total + employee.allWagesFor());
 }
+  
