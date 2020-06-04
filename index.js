@@ -18,7 +18,8 @@ function createTimeInEvent(time){
   const splitTime = time.split(' ');
   const date = splitTime[0];
   const hour = splitTime[1];
-  return this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
+  this.timeInEvents.push({type: "TimeIn", date: date, hour: hour});
+  return this;
 }
 
 function createTimeOutEvent(time){
