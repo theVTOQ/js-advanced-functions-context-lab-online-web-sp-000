@@ -35,7 +35,7 @@ function hoursWorkedOnDate(date){
   const startingHour = parseInt(timeIn.hour);
   const timeOut = this.timeOutEvents.find(event => event.date = date);
   const endingHour = parseInt(timeOut.hour);
-  return endingHour - startingHour;
+  return (endingHour - startingHour)/100;
 }
 
 function wagesEarnedOnDate(date){
