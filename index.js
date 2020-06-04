@@ -73,4 +73,3 @@ function findEmployeeByFirstName(employees, firstName){
 function calculatePayroll(employeeRecords){
   return this.reduce((total, employee) => total + employee.allWagesFor());
 }
-  
